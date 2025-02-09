@@ -1,0 +1,200 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; /* Default black background */
+    background-image: none; /* No image by default */
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+
+  body, h1, h2, button {
+    font-weight: bold;
+}
+
+.timer-display {
+    font-size: 5vw; /* Scales with viewport width */
+}
+.controls button, .soundboard button, .background-selector button {
+    font-size: 1.5vw; /* Adjusts based on screen size */
+    padding: 1vw 2vw;
+}
+.flip-clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vw;
+    gap: 0.5vw;
+    perspective: 1000px; /* Helps with 3D flipping */
+}
+
+.flip {
+    display: inline-block;
+    width: 8vw;
+    height: 12vw;
+    line-height: 12vw;
+    background: #333;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d; /* Ensures proper flipping */
+    transition: transform 0.5s ease-in-out;
+}
+
+
+@keyframes flip {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(-180deg); } /* Flip fully */
+    100% { transform: rotateX(-360deg); } /* Smooth full rotation */
+}
+
+.flip.animate {
+    animation: flip 1.0s ease-in-out;
+}
+
+
+
+  .container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+}
+
+  
+  .sidebar {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .timer-display {
+    font-size: 3rem;
+    margin: 20px 0;
+  }
+  
+  .controls button, .soundboard button, .background-selector button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #333;
+    color: white;
+    transition: background 0.3s ease;
+  }
+  
+  .controls button:hover, .soundboard button:hover, .background-selector button:hover {
+    background: #555;
+  }
+  
+  .soundboard, .background-selector {
+    margin-top: 20px;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .flip-clock {
+    display: flex;
+    font-size: 3rem;
+  }
+  
+  .flip {
+    display: inline-block;
+    width: 50px;
+    height: 80px;
+    background: #333;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    border-radius: 5px;
+    margin: 0 5px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .flip::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    top: 0;
+  }
+  
+  @keyframes flip {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(-90deg); }
+    100% { transform: rotateX(0deg); }
+  }
+  
+  .flip.animate {
+    animation: flip 0.5s ease-in-out;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 60vh; /* Ensures it's tall enough to center */
+}
+#mute-sounds {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: red;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+#mute-sounds:hover {
+    background: darkred;
+}
+
+#youtube-container {
+    display: none; /* Hide YouTube search by default */
+    text-align: center;
+}
+
+#video-controls {
+    display: none; /* Hide controls until a video starts */
+    text-align: center;
+    margin-top: 10px;
+}
+
+#video-controls button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: red;
+    color: white;
+    transition: 0.3s;
+}
+
+#video-controls button:hover {
+    background: darkred;
+}

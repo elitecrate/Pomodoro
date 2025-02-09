@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h1>Pomodoro Timer</h1>
+      <div class="timer-display">
+        <div class="flip-clock">
+          <div class="flip" id="minTens">2</div>
+          <div class="flip" id="minOnes">5</div>
+          <span>:</span>
+          <div class="flip" id="secTens">0</div>
+          <div class="flip" id="secOnes">0</div>
+        </div>
+      </div>      
+      <div class="controls">
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
+        <button id="reset">Reset</button>
+      </div>
+      <div class="soundboard">
+        <h2>Sounds</h2>
+        <button data-sound="rain.mp3">🌧️ Rain</button>
+        <button data-sound="ocean.mp3">🌊 Ocean</button>
+        <button data-sound="forest.mp3">🌳 Forest</button>
+        <button data-sound="Quran.mp3">🌳 Quran</button>
+        <button id="mute-sounds">🔇 Mute Sounds</button>
+        <button id="add-playlist">➕ Add Custom Playlist</button>
+        <div id="playlist-container"></div> <!-- This is where we will embed the playlist -->
+        
+      </div>
+      <div class="background-selector">
+        <h2>Backgrounds</h2>
+        <button data-bg="bg1.jpg">🌄 Mountain</button>
+        <button data-bg="bg2.jpg">🏙️ City</button>
+        <button data-bg="bg3.jpg">🌌 Galaxy</button>
+        <button id="reset-bg">Reset Background</button> <!-- New button -->
+      </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
